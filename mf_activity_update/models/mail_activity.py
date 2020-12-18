@@ -32,23 +32,23 @@ class MailActivity(models.Model):
     #         print('3333333333333333333')
     #         # record.can_write = record in valid_records
 
-    can_delete = fields.Boolean(string="", compute='check_delete'  )
-    can_edit = fields.Boolean(string="", compute='check_edit' )
+    can_delete = fields.Boolean(string="", compute='check_delete')
+    can_edit = fields.Boolean(string="", compute='check_delete')
 
     @api.depends('user_id')
     def check_delete(self):
         for record in self:
-            if record.user_id.id == self.env.user.id  or self.env.user.has_group('project.group_project_manager'):
-                record.can_delete =True
+            if record.create_uid.id == self.env.user.id or self.env.user.has_group('project.group_project_manager'):
+                record.can_edit = record.can_delete = True
             else:
-                record.can_delete = False
+                record.can_edit = record.can_delete = False
         pass
 
-    @api.depends('user_id')
-    def check_edit(self):
-        for record in self:
-            if record.user_id.id == self.env.user.id or record.create_uid.id == self.env.user.id or self.env.user.has_group('project.group_project_manager'):
-                record.can_edit =True
-            else:
-                record.can_edit = False
-        pass
+    # @api.depends('user_id')
+    # def check_edit(self):
+    #     for record in self:
+    #         if record.create_uid.id == self.env.user.id or self.env.user.has_group('project.group_project_manager'):
+    #             record.can_edit =True
+    #         else:
+    #             record.can_edit = False
+    #     pass
