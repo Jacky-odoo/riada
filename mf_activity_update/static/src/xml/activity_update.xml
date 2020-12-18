@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-extend="mail.activity_thread_message_tools">
+        <t t-jquery="a.o_edit_activity" t-operation="replace">
+            <a t-if="activity.can_edit" role="button" href="#" class="btn btn-link btn-secondary text-muted o_edit_activity o_activity_link" t-att-data-activity-id="activity.id">
+                <i class="fa fa-pencil"/> Edit
+            </a>
+        </t>
+
+        <t t-jquery="a.o_unlink_activity" t-operation="replace">
+            <a t-if="activity.can_delete" role="button" href="#" class="btn btn-link btn-danger text-muted o_unlink_activity o_activity_link" t-att-data-activity-id="activity.id">
+                <i class="fa fa-times"/> Cancel
+            </a>
+        </t>
+
+    </t>
+</templates>
