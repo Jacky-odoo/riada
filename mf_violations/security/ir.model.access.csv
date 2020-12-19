@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mf_violations_mf_violations_user,mf_violations.mf_violations_user,model_hr_violation,mf_violations.violation_user,1,1,1,0
+access_mf_violations_mf_violations_manager,mf_violations.mf_violations_manager,model_hr_violation,mf_violations.violation_manager,1,1,1,1
