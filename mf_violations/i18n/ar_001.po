@@ -1,0 +1,275 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mf_violations
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-19 13:08+0000\n"
+"PO-Revision-Date: 2020-12-19 13:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__create_uid
+msgid "Created by"
+msgstr "إنشئ بواسطة"
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__create_date
+msgid "Created on"
+msgstr "إنشئ فى"
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__description
+msgid "Description"
+msgstr "تفاصيل المخالفة"
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__display_name
+msgid "Display Name"
+msgstr "وصف المخالفة"
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__id
+msgid "ID"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,help:mf_violations.field_hr_violation__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,help:mf_violations.field_hr_violation__message_needaction
+#: model:ir.model.fields,help:mf_violations.field_hr_violation__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,help:mf_violations.field_hr_violation__message_has_error
+#: model:ir.model.fields,help:mf_violations.field_hr_violation__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__name
+msgid "Name"
+msgstr "وصف المخالفة"
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,help:mf_violations.field_hr_violation__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,help:mf_violations.field_hr_violation__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,help:mf_violations.field_hr_violation__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,help:mf_violations.field_hr_violation__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,help:mf_violations.field_hr_violation__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.module.category,name:mf_violations.violation_sec_category
+#: model:ir.ui.menu,name:mf_violations.violation_menu
+#: model_terms:ir.ui.view,arch_db:mf_violations.hr_violation_form_view
+#: model_terms:ir.ui.view,arch_db:mf_violations.violation_tree_view
+msgid "Violation"
+msgstr "المخالفات"
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__violation_date
+msgid "Violation Date"
+msgstr "تاريخ المخالفة"
+
+#. module: mf_violations
+#: model:res.groups,name:mf_violations.violation_manager
+msgid "Violation: Manager"
+msgstr ""
+
+#. module: mf_violations
+#: model:res.groups,name:mf_violations.violation_user
+msgid "Violation: User"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.actions.act_window,name:mf_violations.violation_action
+msgid "Violations"
+msgstr "المخالفات"
+
+#. module: mf_violations
+#: model:ir.model.fields,field_description:mf_violations.field_hr_violation__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model.fields,help:mf_violations.field_hr_violation__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: mf_violations
+#: model:ir.model,name:mf_violations.model_hr_violation
+msgid "hr violation"
+msgstr ""
+
+#. module: mf_violations
+#: model_terms:ir.ui.view,arch_db:mf_violations.hr_violation_form_view
+msgid "violation details"
+msgstr "تفاصيل المخالفة"
