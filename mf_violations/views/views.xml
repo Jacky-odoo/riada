@@ -56,6 +56,6 @@
           <field name="view_mode">tree,form</field>
       </record>
 
-      <menuitem id="violation_menu" name="Violation" parent="hr.menu_hr_root" action="violation_action" sequence="3"/>
+      <menuitem id="violation_menu" name="Violation" parent="hr.menu_hr_root" action="violation_action" sequence="1"/>
   </data>
 </odoo>
