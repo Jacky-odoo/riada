@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <template id="assets_backend_islamic_widget" name="islamic_calendar assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/islamic_calendar/static/src/lib/jQuery_calendars/jquery.calendars.picker.css"></link>        
+            <link rel="stylesheet" type="text/scss"  href="/islamic_calendar/static/src/scss/web_hijri_date.scss"></link>
+            <script type="text/javascript" src="/islamic_calendar/static/src/lib/jQuery_calendars/jquery.plugin.js"></script>
+            <script type="text/javascript" src="/islamic_calendar/static/src/lib/jQuery_calendars/jquery.calendars.js"></script>
+            <script type="text/javascript" src="/islamic_calendar/static/src/lib/jQuery_calendars/jquery.calendars.plus.js"></script>
+            <script type="text/javascript" src="/islamic_calendar/static/src/lib/jQuery_calendars/jquery.calendars.picker.js"></script>
+            <script type="text/javascript" src="/islamic_calendar/static/src/lib/jQuery_calendars/jquery.calendars.islamic.js"></script>
+            <script type="text/javascript" src="/islamic_calendar/static/src/lib/jQuery_calendars/jquery.calendars.islamic-ar.js"></script>
+            <script type="text/javascript" src="/islamic_calendar/static/src/lib/jQuery_calendars/jquery.calendars.islamic-fa.js"></script>
+            <script type="text/javascript" src="/islamic_calendar/static/src/js/islamic_calendar.js"></script>
+        </xpath>
+    </template>
+
+    <record id="view_users_form_inherit_islamic" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.local</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='lang']" position="after">
+                <field name="calendear_localisation"/>
+            </xpath>
+        </field>
+    </record>
+</data>
+</odoo>

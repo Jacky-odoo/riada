@@ -1,0 +1,26 @@
+.o_list_view .o_data_row.o_selected_row > .o_data_cell:not(.o_readonly_modifier) .o_datepicker > .o_input {
+    width: 50%;
+    float: left;
+}
+.o_list_view .o_data_row.o_selected_row > .o_data_cell:not(.o_readonly_modifier) .o_datepicker .o_datepicker_button {
+    right: 52%;
+}
+.o_list_view .o_data_row.o_selected_row > .o_data_cell:not(.o_readonly_modifier) .o_datepicker .oe_hijri {
+    width: 50%;
+    float: right;
+}
+.calendars-month {
+    width:100% !important;
+}
+
+.calendars-month-year {
+    width: 35% !important;
+    display: inline-block !important;
+}
+.o_cp_right .oe_hijri {
+    display: none;
+}
+
+.calendars-popup + .bootstrap-datetimepicker-widget {
+    display: none !important;
+}
