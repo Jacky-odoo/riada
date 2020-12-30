@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+        <record model="project.task.type" id="mf_project_from_lead.stage_start">
+            <field name="name">الاعداد</field>
+            <field name="sequence">1</field>
+        </record>
+    </data>
+</odoo>

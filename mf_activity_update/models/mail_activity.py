@@ -108,7 +108,8 @@ class MailActivity(models.Model):
         }
 
         if not self.is_reply:
-            self.env['mail.activity'].create(data)
+            noti = self.env['mail.activity'].create(data)
+            noti.unlink()
         self.unlink()  # will unlink activity, dont access `self` after that
 
         return messages, next_activities
