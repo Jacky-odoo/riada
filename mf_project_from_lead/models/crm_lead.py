@@ -11,7 +11,7 @@ class CrmLead(models.Model):
     _inherit = 'crm.lead'
 
     can_be_project = fields.Boolean(string="", )
-    have_project = fields.Boolean(string="", default=False)
+    have_project = fields.Boolean(string="", default=False,copy=False)
 
     def create_project(self):
         for rec in self:
@@ -29,8 +29,7 @@ class CrmLead(models.Model):
                 'description': rec.description,
             })
             all_messages_crm = self.env['mail.message'].search(
-                ["&", ('res_id', "=", rec.id), ('model', "=", "crm.lead"),
-                 ('message_type', 'not in', ['comment', 'user_notification'])],order='create_date asc')
+                ["&", ('res_id', "=", rec.id), ('model', "=", "crm.lead")],order='create_date asc')
             for message in all_messages_crm:
                 print(message.message_type)
                 message.sudo().copy(
@@ -38,6 +37,11 @@ class CrmLead(models.Model):
                      'email_layout_xmlid': message.email_layout_xmlid, 'message_type': message.message_type,
                      'create_date': message.create_date,
                      })
+            all_attach_crm = self.env['ir.attachment'].search(
+                ["&", ('res_id', "=", rec.id), ('res_model', "=", "crm.lead")])
+            for attach in all_attach_crm:
+                attach.sudo().with_context(no_document=True).copy(
+                    {'res_model': 'project.project', 'res_id': project.id,'type': 'binary',})
 
     def open_project(self):
         project = self.env['project.project'].search([('lead_id', '=', self.id)], limit=1).id

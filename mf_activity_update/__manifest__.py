@@ -25,7 +25,7 @@
         # 'security/ir.model.access.csv',
         # 'security/ir_rule.xml',
         'views/views.xml',
-        # 'views/templates.xml',
+        'data/mail_data.xml',
     ],
     'qweb': ['static/src/xml/activity_update.xml'],
 

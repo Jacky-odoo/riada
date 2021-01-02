@@ -18,15 +18,15 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','crm','project'],
+    'depends': ['base','crm','project','documents'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         # 'security/ir_rule.xml',
+        'data/data.xml',
         'views/views.xml',
         'views/crm_lead_view.xml',
-        'data/data.xml',
         # 'views/templates.xml',
     ],
     # 'qweb': ['static/src/xml/activity_update.xml'],

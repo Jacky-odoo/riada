@@ -113,3 +113,37 @@ class MailActivity(models.Model):
         self.unlink()  # will unlink activity, dont access `self` after that
 
         return messages, next_activities
+
+    def action_notify(self):
+        if not self:
+            return
+        original_context = self.env.context
+        if self.is_reply:
+            print("******************************************")
+            body_template = self.env.ref('mf_activity_update.message_activity_assigned_for_replay')
+        else:
+            body_template = self.env.ref('mail.message_activity_assigned')
+        for activity in self:
+            if activity.user_id.lang:
+                # Send the notification in the assigned user's language
+                self = self.with_context(lang=activity.user_id.lang)
+                body_template = body_template.with_context(lang=activity.user_id.lang)
+                activity = activity.with_context(lang=activity.user_id.lang)
+            model_description = self.env['ir.model']._get(activity.res_model).display_name
+            body = body_template.render(
+                dict(activity=activity, model_description=model_description),
+                engine='ir.qweb',
+                minimal_qcontext=True
+            )
+            record = self.env[activity.res_model].browse(activity.res_id)
+            if activity.user_id:
+                record.message_notify(
+                    partner_ids=activity.user_id.partner_id.ids,
+                    body=body,
+                    subject=_('%s: %s assigned to you') % (activity.res_name, activity.summary or activity.activity_type_id.name),
+                    record_name=activity.res_name,
+                    model_description=model_description,
+                    email_layout_xmlid='mail.mail_notification_light',
+                )
+            body_template = body_template.with_context(original_context)
+            self = self.with_context(original_context)
