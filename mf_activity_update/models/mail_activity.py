@@ -100,7 +100,7 @@ class MailActivity(models.Model):
             'res_id': activity.res_id,
             'activity_type_id': self.env['mail.activity.type'].search(
                     [('name', 'like', 'Handle Ticket')]).id,
-            'summary': _(' %s ') % (activity.summary or 'المهمة المكلف بها') ,
+            # 'summary': _(' %s ') % (activity.summary or 'المهمة المكلف بها') ,
             'note': _('لقد اتممت المهمة بنجاح يمكنك الاطلاع الان'),
             'date_deadline': fields.Datetime.now(),
             'user_id': activity.create_uid.id,

@@ -29,8 +29,7 @@ class CrmLead(models.Model):
                 'description': rec.description,
             })
             all_messages_crm = self.env['mail.message'].search(
-                ["&", ('res_id', "=", rec.id), ('model', "=", "crm.lead"),
-                 ('message_type', 'not in', ['comment', 'user_notification'])],order='create_date asc')
+                ["&", ('res_id', "=", rec.id), ('model', "=", "crm.lead")],order='create_date asc')
             for message in all_messages_crm:
                 print(message.message_type)
                 message.sudo().copy(
