@@ -15,7 +15,7 @@
                         View <t t-esc="model_description or 'document'"/>
                     </a>
                 </p>
-<!--                <div t-if="activity.note" style="margin-top: 8px;" t-field="activity.note"/>-->
+                <div t-if="activity.note" style="margin-top: 8px;" t-field="activity.note"/>
             </div>
         </template>
 

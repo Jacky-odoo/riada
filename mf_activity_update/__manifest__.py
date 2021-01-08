@@ -24,6 +24,7 @@
     'data': [
         # 'security/ir.model.access.csv',
         # 'security/ir_rule.xml',
+        # 'views/templates.xml',
         'views/views.xml',
         'data/mail_data.xml',
     ],

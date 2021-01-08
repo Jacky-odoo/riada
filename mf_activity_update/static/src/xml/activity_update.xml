@@ -2,15 +2,50 @@
 <templates xml:space="preserve">
     <t t-extend="mail.activity_thread_message_tools">
         <t t-jquery="a.o_edit_activity" t-operation="replace">
-            <a t-if="activity.can_edit" role="button" href="#" class="btn btn-link btn-secondary text-muted o_edit_activity o_activity_link" t-att-data-activity-id="activity.id">
+            <a t-if="activity.can_edit" role="button" href="#"
+               class="btn btn-link btn-secondary text-muted o_edit_activity o_activity_link"
+               t-att-data-activity-id="activity.id">
                 <i class="fa fa-pencil"/> Edit
             </a>
         </t>
 
         <t t-jquery="a.o_unlink_activity" t-operation="replace">
-            <a t-if="activity.can_delete" role="button" href="#" class="btn btn-link btn-danger text-muted o_unlink_activity o_activity_link" t-att-data-activity-id="activity.id">
+            <a t-if="activity.can_delete" role="button" href="#"
+               class="btn btn-link btn-danger text-muted o_unlink_activity o_activity_link"
+               t-att-data-activity-id="activity.id">
                 <i class="fa fa-times"/> Cancel
             </a>
+        </t>
+    </t>
+    <t t-extend="mail.widget.Thread.Message">
+        <t t-jquery="div.o_thread_message_content" t-operation="replace">
+            <div class="o_thread_message_content">
+                    <t t-raw="message.getBody()"/>
+                <t t-if="message.hasTrackingValues()">
+                        <t t-if="message.hasSubtypeDescription()">
+                            <p><t t-esc="message.getSubtypeDescription()"/></p>
+                        </t>
+                    <t t-call="mail.widget.Thread.MessageTracking"/>
+                    </t>
+                <!--                <p t-if="message.MessageIsReply() and options.displaySubjectOnMessages and message.shouldDisplaySubject()"  class="o_mail_subject">Subject: <t-->
+                <!--                        t-esc="message.getSubject()"/></p>-->
+                <t t-if="message.hasAttachments()">
+                    <div t-if="message.hasImageAttachments()" class="o_attachments_previews">
+                        <t t-foreach="message.getImageAttachments()" t-as="attachment">
+                            <t t-call="mail.AttachmentPreview">
+                                <t t-set="isDeletable" t-value="options.hasMessageAttachmentDeletable"/>
+                            </t>
+                        </t>
+                    </div>
+                    <div t-if="message.hasNonImageAttachments()" class="o_attachments_list">
+                        <t t-foreach="message.getNonImageAttachments()" t-as="attachment">
+                            <t t-call="mail.Attachment">
+                                <t t-set="isDeletable" t-value="options.hasMessageAttachmentDeletable"/>
+                            </t>
+                        </t>
+                    </div>
+                </t>
+            </div>
         </t>
 
     </t>

@@ -1,5 +1,9 @@
 <odoo>
     <data>
-
+        <template id="assets_backend" name="mf_activity_update assets" inherit_id="web.assets_backend">
+            <xpath expr="//script[contains(@src, '/mail/static/src/js/models/messages/message.js')]" position="replace">
+                <script type="text/javascript" src="/mf_activity_update/static/src/js/message.js"></script>
+            </xpath>
+        </template>
     </data>
 </odoo>
