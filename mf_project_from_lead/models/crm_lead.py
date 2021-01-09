@@ -10,8 +10,20 @@ class ProjectProject(models.Model):
 class CrmLead(models.Model):
     _inherit = 'crm.lead'
 
-    can_be_project = fields.Boolean(string="", )
+    # can_be_project = fields.Boolean(string="",default=False,compute='project_create' )
     have_project = fields.Boolean(string="", default=False, copy=False)
+
+    # @api.depends('have_project','stage_id')
+    # def project_create(self):
+    #     for rec in self:
+    #         if self.env.user.has_group('project.group_project_manager') or rec.stage_id.is_won:
+    #             print(rec.can_be_project,'################',rec.have_project)
+    #             rec.can_be_project = True
+    #         else:
+    #             print(rec.can_be_project,'################2222222222',rec.have_project)
+    #             rec.can_be_project = False
+    #     pass
+
 
     def create_project(self):
         for rec in self:
