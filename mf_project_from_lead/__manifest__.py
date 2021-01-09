@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Activity Updates",
+    'name': "Project From Leads",
 
     'summary': """
-        schedule Activities Updates and Customizations """,
+        create a project From leads """,
 
     'description': """
     """,
 
     'author': "Mohamed Fouad",
-    'website': "http://www.linkedin.com/in/mfhm95",
+    'website': "http://www.mfhm95.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/13.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -18,17 +18,18 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mail','project'],
+    'depends': ['base','crm','project','documents'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         # 'security/ir_rule.xml',
-        # 'views/templates.xml',
+        'data/data.xml',
         'views/views.xml',
-        'data/mail_data.xml',
+        'views/crm_lead_view.xml',
+        # 'views/templates.xml',
     ],
-    'qweb': ['static/src/xml/activity_update.xml'],
+    # 'qweb': ['static/src/xml/activity_update.xml'],
 
     # only loaded in demonstration mode
     'demo': [

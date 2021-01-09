@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="crm_lead_form_inherit" model="ir.ui.view">
+            <field name="name">crm_lead.crm_lead.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_set_won_rainbowman']" position="after">
+                    <field name="have_project" invisible="1"/>
+                    <button name="create_project" type="object" string="Create Project" groups="project.group_project_manager"
+                            attrs="{'invisible': [('have_project', '=', True)]}"/>
+                </xpath>
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="open_project" type="object" class="oe_stat_button" icon="fa-tasks" attrs="{'invisible': [('have_project', '=', False)]}">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">Open Project</span>
+                        </div>
+                    </button>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>
