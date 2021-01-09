@@ -31,7 +31,7 @@ class CrmLead(models.Model):
             all_messages_crm = self.env['mail.message'].search(
                 ["&", ('res_id', "=", rec.id), ('model', "=", "crm.lead"),], order='create_date asc')
             for message in all_messages_crm:
-                if message.notification_ids.notification_status not in ['exception','canceled'] :
+                if not message.notification_ids:
                     print(message.message_type, message.body,message.notification_ids,message.notification_ids.notification_status)
                     message.sudo().copy(
                         {'model': 'project.task', 'res_id': task.id,
