@@ -6,6 +6,8 @@
             <field name="arch" type="xml">
                 <form string="Violation">
                     <sheet>
+                        <field name="display" invisible="1"/>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('display', '=', True)]}"/>
                         <div class="oe_title">
                             <h1>
                                 <field name="name" required="1" placeholder="وصف مبسط للمخالفة"/>
