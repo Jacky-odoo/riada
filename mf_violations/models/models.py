@@ -16,13 +16,12 @@ class HrViolation(models.Model):
     violation_date = fields.Date(string="", required=False, tracking=True)
     description = fields.Text(string="", required=False, tracking=True)
     active = fields.Boolean(default=True,)
-    display = fields.Boolean(default=True,)
 
 
 
     def archive(self):
         for rec in self:
-            if rec.display == True:
-                rec.display = False
+            if rec.active == True:
+                rec.active = False
             else:
-                rec.display = True
+                rec.active = True
