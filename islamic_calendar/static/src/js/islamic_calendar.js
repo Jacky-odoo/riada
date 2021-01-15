@@ -14,7 +14,7 @@ var session = require('web.session');
 var _t = core._t;
 var qweb = core.qweb;
 var lang = '';
-var date_format = '%m/%d/%Y';
+var date_format = 'dd/MM/yyyy';
 
 datepicker.DateWidget.include({
     start: function() {
@@ -81,7 +81,7 @@ datepicker.DateWidget.include({
                 var date = cal_hijri.fromJD(jd);
                 var m = (date.month() >=10 ? date.month():"0"+date.month());
                 var d = (date.day() >=10 ? date.day():"0"+date.day());
-                $(this.$input_hijri).val(cal_hijri.formatDate('dd/mm/yyyy', date));
+                $(this.$input_hijri).val(cal_hijri.formatDate('dd/MM/yyyy', date));
             }
 
             if(text.indexOf('/')!= -1){
@@ -94,7 +94,7 @@ datepicker.DateWidget.include({
                 var date = cal_hijri.fromJD(jd);
                 var m = (date.month() >=10 ? date.month():"0"+date.month());
                 var d = (date.day() >=10 ? date.day():"0"+date.day());
-                $(this.$input_hijri).val(cal_hijri.formatDate('dd/mm/yyyy', date));
+                $(this.$input_hijri).val(cal_hijri.formatDate('dd/MM/yyyy', date));
             }
         }
     },
@@ -247,7 +247,7 @@ datetimefield.FieldDate.include({
                 var date = cal_hijri.fromJD(jd);
                 var m = (date.month() >=10 ? date.month():"0"+date.month());
                 var d = (date.day() >=10 ? date.day():"0"+date.day());
-                return cal_hijri.formatDate('dd/mm/yyyy', date);
+                return cal_hijri.formatDate('dd/MM/yyyy', date);
             }
 
             if(text.indexOf('/')!= -1){
@@ -260,7 +260,7 @@ datetimefield.FieldDate.include({
                 var date = cal_hijri.fromJD(jd);
                 var m = (date.month() >=10 ? date.month():"0"+date.month());
                 var d = (date.day() >=10 ? date.day():"0"+date.day());
-                return cal_hijri.formatDate('dd/mm/yyyy', date);
+                return cal_hijri.formatDate('dd/MM/yyyy', date);
             }
         }
     },
@@ -286,7 +286,7 @@ ListRenderer.include({
                 var date = cal_hijri.fromJD(jd);
                 var m = (date.month() >=10 ? date.month():"0"+date.month());
                 var d = (date.day() >=10 ? date.day():"0"+date.day());
-                var hijri_value = cal_hijri.formatDate('dd/mm/yyyy', date);
+                var hijri_value = cal_hijri.formatDate('dd/MM/yyyy', date);
                 var new_date= text + ' (' + hijri_value + ')';
             }
             return $cell.text(new_date).attr('title', new_date);
