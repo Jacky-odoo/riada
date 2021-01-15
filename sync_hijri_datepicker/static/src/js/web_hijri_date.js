@@ -41,7 +41,7 @@ odoo.define('sync_hijri_datepicker.datepicker', function (require) {
             });
             this.$input_hijri.calendarsPicker({
                 calendar: $.calendars.instance('islamic', this.options.locale),
-                dateFormat: 'M d, yyyy',
+                dateFormat: 'd M, yyyy',
                 closeOnDateSelect: false,
                 onSelect: this._convertDateToHijri.bind(this),
             });
@@ -61,7 +61,9 @@ odoo.define('sync_hijri_datepicker.datepicker', function (require) {
                 jd = $.calendars.instance('gregorian').toJD(year, month, day);
                 formatted_date = calendar.fromJD(jd);
                 var month = calendar.formatDate('MM', formatted_date);
-                var date = calendar.formatDate('d, yyyy', formatted_date);
+                var day = calendar.formatDate('d', formatted_date);
+                var year = calendar.formatDate('YYYY', formatted_date);
+                var date = calendar.formatDate('yyyy , d', formatted_date);
                 if (this.options.locale == 'ar') {
                     date = date.fromDigits();
                     month = _.find(hijriMonths, function (value, key) {
@@ -70,7 +72,7 @@ odoo.define('sync_hijri_datepicker.datepicker', function (require) {
                         }
                     });
                 }
-                return _.str.sprintf("%s %s", month, date);
+                return _.str.sprintf(" %s - %s - %s ", day, month , year);
             }
         },
         _convertDateToHijri: function (date) {
