@@ -1,6 +1,6 @@
 /* Default styling for jQuery Calendars Picker v2.0.0. */
 .calendars {
-	width:216px !important;
+	width:252px !important;
 	background-color: #fff;
 	color: #000;
 	border: 1px solid #444;
@@ -121,7 +121,7 @@ button.calendars-cmd {
 }
 .calendars-month {
 	float: left;
-	width: 17em;
+	width: 20em;
 	border: 1px solid #444;
 	text-align: center;
 }

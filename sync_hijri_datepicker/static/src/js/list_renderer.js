@@ -59,7 +59,7 @@ odoo.define('sync_hijri_datepicker.ListRenderer', function (require) {
                 }
                 month = calendar1.formatDate('MM', formatted_date);
                 var date = calendar1.formatDate('d, yyyy', formatted_date);
-                if (this.state.context.lang === 'ar_SY') {
+                if (this.state.context.lang === 'ar_001') {
                     date = date.fromDigits();
                     month = _.find(hijriMonths, function (value, key) {
                         if (key === month) {
