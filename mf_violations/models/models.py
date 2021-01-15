@@ -18,10 +18,10 @@ class HrViolation(models.Model):
     active = fields.Boolean(default=True,)
 
 
-
-    def archive(self):
-        for rec in self:
-            if rec.active == True:
-                rec.active = False
-            else:
-                rec.active = True
+    #
+    # def archive(self):
+    #     for rec in self:
+    #         if rec.active == True:
+    #             rec.active = False
+    #         else:
+    #             rec.active = True
