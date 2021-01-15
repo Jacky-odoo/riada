@@ -51,15 +51,15 @@
             </field>
         </record>
 
-<!--        <record id="violation_search_view" model="ir.ui.view">-->
-<!--            <field name="name">violation_search_view</field>-->
-<!--            <field name="model">hr_violation</field>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <search string="Active Violations">-->
-<!--                    <filter name="active" string="active" domain="[('active','=',True)]"/>-->
-<!--                </search>-->
-<!--            </field>-->
-<!--        </record>-->
+        <record id="violation_search_view" model="ir.ui.view">
+            <field name="name">violation_search_view</field>
+            <field name="model">hr_violation</field>
+            <field name="arch" type="xml">
+                <search string="Active Violations">
+                    <filter name="archived" string="Archived" domain="[('active','=',False)]"/>
+                </search>
+            </field>
+        </record>
 
         <record id="violation_action" model="ir.actions.act_window">
             <field name="name">Violations</field>
