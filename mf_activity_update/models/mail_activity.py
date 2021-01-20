@@ -94,22 +94,22 @@ class MailActivity(models.Model):
         next_activities = self.env['mail.activity'].create(next_activities_values)
         # print(activity.res_model,activity._name,activity.activity_type_id,activity.id,'######')
         # print(activity.id)
-        data = {
-            'res_model_id': self.env['ir.model'].search(
-                [('model', '=',activity.res_model )]).id,
-            'res_id': activity.res_id,
-            'activity_type_id': self.env['mail.activity.type'].search(
-                    [('name', 'like', 'Handle Ticket')]).id,
-            'summary': _(' %s ') % (activity.summary or 'المهمة المكلف بها') ,
-            'note': _('لقد اتممت المهمة بنجاح يمكنك الاطلاع الان'),
-            'date_deadline': fields.Datetime.now(),
-            'user_id': activity.create_uid.id,
-            'is_reply': True,
-        }
-
-        if not self.is_reply:
-            noti = self.env['mail.activity'].create(data)
-            noti.unlink()
+        if self.res_model:
+            data = {
+                'res_model_id': self.env['ir.model'].search(
+                    [('model', '=',self.res_model )]).id,
+                'res_id': self.res_id,
+                'activity_type_id': self.env['mail.activity.type'].search(
+                        [('name', 'like', 'Handle Ticket')]).id,
+                'summary': _(' %s ') % (self.summary or 'المهمة المكلف بها') ,
+                'note': _('لقد اتممت المهمة بنجاح يمكنك الاطلاع الان'),
+                'date_deadline': fields.Datetime.now(),
+                'user_id': self.create_uid.id,
+                'is_reply': True,
+            }
+            if not self.is_reply:
+                noti = self.env['mail.activity'].create(data)
+                noti.unlink()
         self.unlink()  # will unlink activity, dont access `self` after that
 
         return messages, next_activities
