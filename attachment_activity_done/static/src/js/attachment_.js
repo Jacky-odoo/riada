@@ -53,8 +53,6 @@ odoo.define('attachment_activity_done.attachment', function (require) {
         events: _.extend({}, Activity.prototype.events, {
             'click .o_mark_as_done_attach_upload_file': '_onMarkActivityAttachDoneUploadFile',
             'change input.o_attach_input_file': '_onFileAttachChanged',
-//            'click .o_attachment_delete_cross': '_onDeleteAttachment',
-
         }),
         _render: function () {
             _.each(this._activities, function (activity) {
@@ -202,7 +200,7 @@ odoo.define('attachment_activity_done.attachment', function (require) {
                             attachmentIds.push(file_id);
                             attachmentIdsInput.val(JSON.stringify(attachmentIds));
                             attachmentIdsInput.trigger("change")
-                            var preview = '<div class="o_attachment_image o_attachment_delete_cross" style="background-image:url(/web/image/'+file_id+'/160x160/?crop=true); width: 40px;height: 40px; background-size: contain;  background-repeat: no-repeat;display: inline-block;margin:0 3px;"/>';
+                            var preview = '<div class="o_attachment_image" style="background-image:url(/web/image/'+file_id+'/160x160/?crop=true); width: 40px;height: 40px; background-size: contain;  background-repeat: no-repeat;display: inline-block;margin:0 3px;"/>';
                             $(document).find('#attachment_preview').append(preview);
                         }else{
                             self._markActivityDone({
@@ -216,15 +214,6 @@ odoo.define('attachment_activity_done.attachment', function (require) {
                 }
             });
         },
-
-//        _onDeleteAttachment: function (ev) {
-//        ev.stopPropagation();
-//        var $target = $(ev.currentTarget);
-//        this.trigger_up('delete_attachment', {
-//            attachmentId: $target.data('id'),
-//            attachmentName: $target.data('name')
-//        });
-//        },
         _onMarkActivityDoneActions: function ($btn, $form, activityID) {
             var self = this;
             var attachments = [];
