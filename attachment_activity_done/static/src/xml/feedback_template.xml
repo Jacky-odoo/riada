@@ -7,7 +7,7 @@
                 <input type="hidden" id="activity_attachment" class="form-control" />
 
                 <span class="o_mark_as_done_attach_upload_file  mt8 d-block" t-att-data-activity-id="activity.id" t-att-data-previous-activity-type-id="activity.activity_type_id[0]" t-att-data-fileupload-id="activity.fileuploadID">
-                    <a role="button" class="btn btn-link btn-success text-muted o_activity_link mr8">
+                    <a role="button" style="color:green" class="btn btn-link btn-success o_activity_link mr8">
                     <i class="fa fa-upload"/> Upload Document
                     </a>
                 </span>
