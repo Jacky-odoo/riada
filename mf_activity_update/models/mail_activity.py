@@ -11,7 +11,7 @@ class MailActivity(models.Model):
     @api.depends('user_id')
     def check_delete(self):
         for record in self:
-            if (record.create_uid.id == self.env.user.id and not record.is_reply) or self.env.user.has_group('project.group_project_manager'):
+            if (record.create_uid == self.env.user and not record.is_reply) or self.env.user.has_group('project.group_project_manager'):
                 record.can_edit = record.can_delete = True
             else:
                 record.can_edit = record.can_delete = False
