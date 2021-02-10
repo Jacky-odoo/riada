@@ -23,7 +23,7 @@
                               method="post" enctype="multipart/form-data" t-att-action="fileupload_action || '/web/binary/upload'">
                             <input type="hidden" name="csrf_token" t-att-value="csrf_token"/>
                             <input type="hidden" name="callback" t-att-value="fileupload_id"/>
-                            <input type="file" class="o_attach_input_file" name="ufile"/>
+                            <input type="file" class="o_attach_input_file" name="ufile" multiple="True"/>
 
                             <input type="hidden" name="model" t-att-value="activity.res_model"/>
                             <input type="hidden" name="id" t-att-value="activity.res_id"/>

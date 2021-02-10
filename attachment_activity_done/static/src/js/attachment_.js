@@ -53,8 +53,6 @@ odoo.define('attachment_activity_done.attachment', function (require) {
         events: _.extend({}, Activity.prototype.events, {
             'click .o_mark_as_done_attach_upload_file': '_onMarkActivityAttachDoneUploadFile',
             'change input.o_attach_input_file': '_onFileAttachChanged',
-//            'click .o_attachment_delete_cross': '_onDeleteAttachment',
-
         }),
         _render: function () {
             _.each(this._activities, function (activity) {
@@ -198,12 +196,24 @@ odoo.define('attachment_activity_done.attachment', function (require) {
                             if(attachmentIdsInput.val()){
                                 attachmentIds = JSON.parse(attachmentIdsInput.val())
                             }
-                            var file_id = _.pluck(files, 'id')[0]
-                            attachmentIds.push(file_id);
+                            var file_ids = _.pluck(files, 'id')
+                            $.each( files, function( key, value ) {
+                                var file_id = value.id
+                                attachmentIds.push(file_id);
+
+
+                                if(value.mimetype.match('image.*')){
+                                    var preview = '<div class="o_attachment_image" style="border: 1px solid #ccc;border-radius: 5px;background-image:url(/web/image/'+file_id+'/160x160/?crop=true); width: 40px;height: 40px; background-size: contain;  background-repeat: no-repeat;display: inline-block;margin:0 3px; "/>';
+                                }else{
+                                    var preview = '<div class="o_image o_image_thumbnail" data-mimetype="'+value.mimetype+'"/>';
+                                }
+                                $(document).find('#attachment_preview').append(preview);
+                            });
+
+
                             attachmentIdsInput.val(JSON.stringify(attachmentIds));
                             attachmentIdsInput.trigger("change")
-                            var preview = '<div class="o_attachment_image o_attachment_delete_cross" style="background-image:url(/web/image/'+file_id+'/160x160/?crop=true); width: 40px;height: 40px; background-size: contain;  background-repeat: no-repeat;display: inline-block;margin:0 3px;"/>';
-                            $(document).find('#attachment_preview').append(preview);
+
                         }else{
                             self._markActivityDone({
                                 activityID: activity.id,
@@ -216,15 +226,6 @@ odoo.define('attachment_activity_done.attachment', function (require) {
                 }
             });
         },
-
-//        _onDeleteAttachment: function (ev) {
-//        ev.stopPropagation();
-//        var $target = $(ev.currentTarget);
-//        this.trigger_up('delete_attachment', {
-//            attachmentId: $target.data('id'),
-//            attachmentName: $target.data('name')
-//        });
-//        },
         _onMarkActivityDoneActions: function ($btn, $form, activityID) {
             var self = this;
             var attachments = [];
