@@ -47,8 +47,6 @@ var Text = InField.extend({
                     editor.on('change', function(e) {
                         var content = editor.getData();
                         $(input).val(content).trigger('change');
-                        console.log($(input).val())
-                        alert("changed...")
                     });
 
                 }
