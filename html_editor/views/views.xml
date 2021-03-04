@@ -12,17 +12,17 @@
             </field>
         </record>
 
-<!--        <record id="view_mail_wizard_editor" model="ir.ui.view">-->
-<!--            <field name="name">mail.mail.wizard.editor.inherit</field>-->
-<!--            <field name="model">mail.compose.message</field>-->
-<!--            <field name="priority" eval="15"/>-->
-<!--            <field name="inherit_id" ref="mail.email_compose_message_wizard_form"/>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <field name="body" position="replace">-->
-<!--                    <field name="body" widget="sm_editor"/>-->
-<!--                </field>-->
-<!--            </field>-->
-<!--        </record>-->
+        <record id="view_mail_wizard_editor" model="ir.ui.view">
+            <field name="name">mail.mail.wizard.editor.inherit</field>
+            <field name="model">mail.compose.message</field>
+            <field name="priority" eval="15"/>
+            <field name="inherit_id" ref="mail.email_compose_message_wizard_form"/>
+            <field name="arch" type="xml">
+                <field name="body" position="replace">
+                    <field name="body" widget="sm_editor"/>
+                </field>
+            </field>
+        </record>
 
     </data>
 </odoo>
