@@ -33,20 +33,17 @@ var Text = InField.extend({
                 if(input){
                     var editorId = $(input).attr('id');
                     var editorContent = $(input).val()
-                    var editorElement = CKEDITOR.document.getById( editorId );
-                    var editor = CKEDITOR.replace(editorId);
+                    var editor = CKEDITOR.replace(input);
                     editor.setData(editorContent);
 
                     editor.on('key', function(e) {
                         var content = editor.getData();
-                        $(input).val(content).trigger('change');
+                        $(document).find(input).val(content).trigger('change');
                     });
-
-
 
                     editor.on('change', function(e) {
                         var content = editor.getData();
-                        $(input).val(content).trigger('change');
+                        $(document).find(input).val(content).trigger('change');
                     });
 
                 }
